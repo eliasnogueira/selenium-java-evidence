@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportExample1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0e76087c-8c42-4547-a64e-bdaa76651932">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="408"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="SEL_PROJECT" class="java.lang.String"/>
+	<parameter name="SEL_TESTER" class="java.lang.String"/>
+	<parameter name="SEL_MESSAGE" class="java.lang.String"/>
+	<parameter name="SEL_EVIDENCE_IMAGE" class="java.lang.String"/>
+	<parameter name="SEL_EXCEPTION" class="java.lang.String"/>
+	<parameter name="SEL_COMPANY_LOGO" class="java.lang.Object"/>
+	<parameter name="SEL_CUSTOMER_LOGO" class="java.lang.Object"/>
+	<parameter name="SEL_LABEL_EVINDENCE_TITLE" class="java.lang.String"/>
+	<parameter name="SEL_LABEL_PROJECT" class="java.lang.String"/>
+	<parameter name="SEL_LABEL_TESTER" class="java.lang.String"/>
+	<parameter name="SEL_LABEL_DATE" class="java.lang.String"/>
+	<parameter name="SEL_LABEL_STATUS" class="java.lang.String"/>
+	<parameter name="SEL_LABEL_PASS" class="java.lang.String"/>
+	<parameter name="SEL_LABEL_FAILED" class="java.lang.String"/>
+	<parameter name="SEL_LABEL_ERROR_DETAIL" class="java.lang.String"/>
+	<parameter name="SEL_LABEL_FOOTER" class="java.lang.String"/>
+	<parameter name="SEL_LABEL_PAGE" class="java.lang.String"/>
+	<parameter name="SEL_LABEL_EVIDENCE_REPORT" class="java.lang.String"/>
+	<parameter name="SEL_LABEL_COMPANY_NAME" class="java.lang.String"/>
+	<field name="message" class="java.lang.String"/>
+	<field name="image" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="62" splitType="Stretch">
+			<textField>
+				<reportElement uuid="37aea699-64ec-45c4-af1d-1321237ecddc" style="Title" x="143" y="2" width="273" height="33"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SEL_LABEL_COMPANY_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="304edd6e-b5d8-4cad-afea-7941bd3d0c5a" style="SubTitle" x="0" y="35" width="553" height="22"/>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA[$P{SEL_LABEL_EVIDENCE_REPORT}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="e276512b-9238-48e0-95b5-f276ccd275d4" x="0" y="0" width="143" height="35"/>
+				<imageExpression><![CDATA[$P{SEL_CUSTOMER_LOGO}]]></imageExpression>
+			</image>
+			<image hAlign="Right">
+				<reportElement uuid="dd8d2eac-5550-4beb-92c5-4e6bd931d940" x="416" y="0" width="137" height="35"/>
+				<imageExpression><![CDATA[$P{SEL_COMPANY_LOGO}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="63" splitType="Stretch">
+			<line>
+				<reportElement uuid="1b6e6e5a-3e50-45f8-84e5-d3e8cfcd18de" positionType="FixRelativeToBottom" x="0" y="60" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="4686c4e5-bbe7-45d0-ad25-d08313e77a6b" x="0" y="40" width="63" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SEL_LABEL_STATUS}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="51bd0181-1de5-4103-8694-52075d47dc28" x="388" y="20" width="167" height="20" forecolor="#666666"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="328ecef3-50a5-4b9c-bbe3-5d6db5b675f9" x="0" y="0" width="63" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SEL_LABEL_PROJECT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6937ccd6-afdf-438d-bba9-cb06fd36af1e" x="0" y="20" width="63" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SEL_LABEL_TESTER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5cd7ac75-54fd-4abd-9da6-15a59c830c2d" x="64" y="40" width="63" height="20" forecolor="#FF0000">
+					<printWhenExpression><![CDATA[$P{SEL_EXCEPTION}.length() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SEL_LABEL_FAILED}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="79c45e99-57e8-4e35-b78b-c3fe59e3e0f9" x="64" y="20" width="261" height="20" forecolor="#666666"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SEL_TESTER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="60262899-ce32-4793-87c0-9fdbe0f3aa89" x="324" y="20" width="63" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SEL_LABEL_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2e2107a3-3348-404d-88ed-5e8afff2f37d" x="64" y="0" width="433" height="20" forecolor="#666666"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SEL_PROJECT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="500" splitType="Prevent">
+			<line>
+				<reportElement uuid="d0763014-35b7-45a1-8cdd-5a6fdb6c0d1d" positionType="FixRelativeToBottom" x="2" y="36" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<image scaleImage="FillFrame" hAlign="Left">
+				<reportElement uuid="cb044e89-81a4-445d-9106-f08095cc393e" x="1" y="23" width="554" height="477"/>
+				<imageExpression><![CDATA[$F{image}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="435b265c-7565-4b0c-a978-0e2722baa737" x="2" y="3" width="554" height="20" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{message}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement uuid="e669b12f-59e9-4a8d-866f-0c3a4954558f" x="172" y="16" width="127" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SEL_LABEL_PAGE}+ " " + $V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b536a7af-9ff6-49b6-9dcc-d3b376a94cfc" x="1" y="1" width="553" height="15" forecolor="#666666"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SEL_LABEL_FOOTER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="f4bd450d-434f-4728-b8ef-2af31ff86833" x="0" y="1" width="554" height="1" forecolor="#666666"/>
+			</line>
+			<textField evaluationTime="Report">
+				<reportElement uuid="5f25ac4a-1837-4b6d-a820-e769e4fa0057" x="299" y="16" width="40" height="20" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="41" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{SEL_EXCEPTION}.length() > 0]]></printWhenExpression>
+			<textField>
+				<reportElement uuid="d0af3049-019d-471b-b789-a4923794b0d3" x="1" y="2" width="553" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SEL_LABEL_ERROR_DETAIL}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="4a8639ae-8397-4a83-a014-6be4f277ed8f" stretchType="RelativeToTallestObject" x="1" y="22" width="554" height="18" forecolor="#FF0000"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{SEL_EXCEPTION}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
