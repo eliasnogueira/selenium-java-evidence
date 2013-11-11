@@ -3,7 +3,28 @@
   <groupId>com.eliasnogueira</groupId>
   <artifactId>selenium-java-evidence</artifactId>
   <version>0.0.2</version>
-  <name>Selenium java evidence</name>
+  <name>Selenium Java Evidence</name>
+  <description>An API to generate evicentes to your tests</description>
+  <url>https://github.com/eliasnogueira/selenium-java-evidence</url>
+  <licenses>
+    <license>
+      <name>GNU GPL V3</name>
+      <url>http://www.gnu.org/licenses/gpl.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>https://github.com/eliasnogueira/selenium-java-evidence</url>
+    <connection>https://github.com/eliasnogueira/selenium-java-evidence.git</connection>
+    <developerConnection>Elias Nogueira</developerConnection>
+  </scm>
+  <developers>
+    <developer>
+      <id>1</id>
+      <name>Elias Nogueira</name>
+      <email>elias.nogueira@gmail.com</email>
+    </developer>
+  </developers>
   <dependencies>
   	<dependency>
   		<groupId>commons-codec</groupId>
@@ -68,4 +89,8 @@
 		  </plugin>  
 	  </plugins>
   </build>
+  <organization>
+  	<name>Elias Nogueira</name>
+  	<url>eliasnogueira.com</url>
+  </organization>
 </project>
