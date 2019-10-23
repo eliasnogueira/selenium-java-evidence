@@ -40,6 +40,10 @@ public final class SeleniumEvidence {
         setMessage(message);
         setImageString(imageString);
     }
+    
+    public SeleniumEvidence(String message) throws Exception {
+        setMessage(message);
+    }
 
     /**
      * Get the evidence message
